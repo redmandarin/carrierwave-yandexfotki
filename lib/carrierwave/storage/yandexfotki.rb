@@ -72,7 +72,7 @@ module CarrierWave
       def store!(file)
         # return if @image_identifier
         
-        cache!(new_file) if new_file && ((@cache_id != parent_cache_id) || @cache_id.nil?)
+        cache!(file) if file && ((@cache_id != parent_cache_id) || @cache_id.nil?)
         f = CarrierWave::Storage::YandexFotki::File.new(uploader, self, @identifier)
         @image_identifier = f.store(file)
         f
