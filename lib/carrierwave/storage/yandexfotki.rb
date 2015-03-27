@@ -70,7 +70,7 @@ module CarrierWave
       # [YandexFotki::File] the stored file
       #
       def store!(file)
-        return if @image_identifier
+        # return if @image_identifier
 
         f = CarrierWave::Storage::YandexFotki::File.new(uploader, self, @identifier)
         @image_identifier = f.store(file)
